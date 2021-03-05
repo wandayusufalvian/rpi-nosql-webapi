@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\source\\repos\\nosql-api\\nosql-api\\nosql-api.csproj": {}
+    "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\nosql-api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\source\\repos\\nosql-api\\nosql-api\\nosql-api.csproj": {
+    "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\nosql-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\nosql-api\\nosql-api\\nosql-api.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\nosql-api.csproj",
         "projectName": "nosql-api",
-        "projectPath": "C:\\Users\\DELL\\source\\repos\\nosql-api\\nosql-api\\nosql-api.csproj",
+        "projectPath": "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\nosql-api.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\source\\repos\\nosql-api\\nosql-api\\obj\\",
+        "outputPath": "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "RavenDB.Client": {
+              "target": "Package",
+              "version": "[5.1.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,4 @@
+﻿86400 data :
+>> Json Plain Text= 1 s (lokal)
+>> Json Plain Text= 35-40 s (rpi)
+>> 

@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using nosql_api.Models;
+using nosql_api.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace nosql_api.Controllers
@@ -19,35 +22,49 @@ namespace nosql_api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<SensorData> Get()
+        public string Get()
         {
-            var rng = new Random();
-            DateTime dt = new DateTime(2021,1,1,0,0,0);
-            return Enumerable.Range(0, 5).Select(index => new SensorData
-            {   
-                datetime= dt.AddSeconds(index),
-                sensorData =new List<double>
-                {
-                    rng.Next(0, 10),rng.Next(0, 10),rng.Next(0, 10),rng.Next(0, 10),rng.Next(0, 10)
-                }
-            })
-            .ToArray();
+            return "Connected";
         }
 
-        [HttpGet("{id}")]
-        public IEnumerable<SensorData> GetA()
+        [HttpGet("writedocs")]
+        public string WriteDocs()
         {
-            var rng = new Random();
-            DateTime dt = new DateTime(2021, 1, 1, 0, 0, 0);
-            return Enumerable.Range(0, 2).Select(index => new SensorData
-            {
-                datetime = dt.AddSeconds(index),
-                sensorData = new List<double>
-                {
-                    rng.Next(0, 10),rng.Next(0, 10),rng.Next(0, 10),rng.Next(0, 10),rng.Next(0, 10)
-                }
-            })
-            .ToArray();
+            return RavenServices.WriteDocs();
         }
+
+        [HttpGet("json")]
+        public IEnumerable<SensorData> Getjson()
+        {
+            return JsonFileServices.GetDatasJson();
+        }
+
+        [HttpGet("ravendb1")] // untuk ravendb timeseries
+        public IEnumerable<SensorData> GetRaven()
+        {
+            return RavenServices.RetrieveAllDocs();
+        }
+
+        [HttpGet("ravendb2")] // untuk ravendb tsdb2
+        public IEnumerable<SensorData2> GetRaven2()
+        {
+
+            return RavenServices.RetrieveAllDocs2();
+        }
+
+        [HttpGet("ravendb2mod5")]
+        public IEnumerable<SensorData2> GetRavenModFive()
+        {
+            return RavenServices.RetrieveAllDocsModFive();
+        }
+
+        [HttpGet("{ravendb2mod10}")]
+        public IEnumerable<SensorData2> GetRavenModTen()
+        {
+            return RavenServices.RetrieveAllDocsModTen();
+        }
+
+
+
     }
 }

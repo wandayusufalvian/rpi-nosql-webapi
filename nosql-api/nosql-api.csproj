@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,8 +6,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Experiment-result\**" />
+    <Content Remove="Experiment-result\**" />
+    <EmbeddedResource Remove="Experiment-result\**" />
+    <None Remove="Experiment-result\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Controllers\WeatherForecastController.cs" />
     <Compile Remove="WeatherForecast.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Data\ini-2.json" />
+    <Content Remove="Data\ini-86400.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Data\ini-2.json" />
+    <None Include="Data\ini-86400.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RavenDB.Client" Version="5.1.5" />
   </ItemGroup>
 
 
