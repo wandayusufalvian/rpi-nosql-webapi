@@ -4,7 +4,11 @@ using nosql_api.Models;
 using nosql_api.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -27,16 +31,46 @@ namespace nosql_api.Controllers
             return "Connected";
         }
 
-        [HttpGet("writedocs")]
-        public string WriteDocs()
+        [HttpGet("writejson")]
+        public string GetWriteJson()
         {
-            return RavenServices.WriteDocs();
+            int dataQuantity = 86400;
+            return JsonFileServices.WriteJsonFile(dataQuantity);
+        }
+        [HttpGet("readjsoneachline")]
+        public string GetJsonEachLine()
+        {
+            return JsonFileServices.ReadJsonEachLine();
+        }
+
+
+        [HttpGet("downloadjson")]
+        public IActionResult DownloadJson()
+        {
+            var net = new System.Net.WebClient();
+            var data = net.DownloadData(@"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\ini-2.json");
+            var content = new System.IO.MemoryStream(data);
+            var contentType = "application/json";
+            var fileName = "ini-2.json";
+            return File(content, contentType, fileName);
+        }
+
+        [HttpGet("rawjson")]
+        public string GetRawJson()
+        {
+            return JsonFileServices.GetJsonString();
         }
 
         [HttpGet("json")]
         public IEnumerable<SensorData> Getjson()
         {
             return JsonFileServices.GetDatasJson();
+        }
+
+        [HttpGet("writedocsraven")]
+        public string WriteDocs()
+        {
+            return RavenServices.WriteDocs();
         }
 
         [HttpGet("ravendb1")] // untuk ravendb timeseries
@@ -56,6 +90,7 @@ namespace nosql_api.Controllers
         public IEnumerable<SensorData2> GetRavenModFive()
         {
             return RavenServices.RetrieveAllDocsModFive();
+           
         }
 
         [HttpGet("{ravendb2mod10}")]
@@ -63,8 +98,5 @@ namespace nosql_api.Controllers
         {
             return RavenServices.RetrieveAllDocsModTen();
         }
-
-
-
     }
 }

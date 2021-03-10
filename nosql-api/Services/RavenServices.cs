@@ -47,6 +47,7 @@ namespace nosql_api.Services
                  */
                 return session
                         .Query<SensorData>()
+                        .Take(8640)
                         .Select(x => x)
                         .ToList();
             }
@@ -61,6 +62,7 @@ namespace nosql_api.Services
                  */
                 return  session
                         .Query<SensorData2>()
+                        .Take(8640)
                         .Select(x => x)
                         .ToList();
 

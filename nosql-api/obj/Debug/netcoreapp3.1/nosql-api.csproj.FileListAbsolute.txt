@@ -48,3 +48,5 @@ C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\bin\Debug\netcoreapp3.1\S
 C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
 C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
 C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\obj\Debug\netcoreapp3.1\nosql-api.csproj.CopyComplete
+C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\bin\Debug\netcoreapp3.1\Data\json-5.json
+C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\bin\Debug\netcoreapp3.1\Data\json-86400.json
