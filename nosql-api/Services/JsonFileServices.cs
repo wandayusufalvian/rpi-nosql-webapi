@@ -57,13 +57,16 @@ namespace nosql_api.Services
             return "success write data";
         }
 
-        public static string ReadJsonEachLine()
+        public static string ReadJsonEach5Lines()
         {
             StringBuilder sb = new StringBuilder();
-            using (StreamReader r = new StreamReader(@"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-5.json"))
+            string lokalPath = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-86400.json";
+            string path = Directory.GetCurrentDirectory();
+            string rpiPath = @$"{path}/Data/json-86400.json";
+            using (StreamReader r = new StreamReader(lokalPath))
             {
                 int i= 0;
-                while (i<5)
+                while (i<86400)
                 {
                     if (i % 5 == 0)
                     {
@@ -73,6 +76,29 @@ namespace nosql_api.Services
                     i++;
                 }
             }return sb.ToString(); 
+        }
+
+        public static string ReadJsonEach10Lines()
+        {
+            StringBuilder sb = new StringBuilder();
+            string lokalPath = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-86400.json";
+            string path = Directory.GetCurrentDirectory();
+            string rpiPath = @$"{path}/Data/json-86400.json";
+            using (StreamReader r = new StreamReader(lokalPath))
+            {
+
+                int i = 0;
+                while (i < 86400)
+                {
+                    if (i % 10 == 0)
+                    {
+                        sb.Append(r.ReadLine() + Environment.NewLine);
+                    }
+                    else { r.ReadLine(); }
+                    i++;
+                }
+            }
+            return sb.ToString();
         }
     }
 }

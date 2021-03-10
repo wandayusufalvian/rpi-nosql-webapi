@@ -37,10 +37,16 @@ namespace nosql_api.Controllers
             int dataQuantity = 86400;
             return JsonFileServices.WriteJsonFile(dataQuantity);
         }
-        [HttpGet("readjsoneachline")]
-        public string GetJsonEachLine()
+        [HttpGet("readjsoneach5line")]
+        public string GetJsonEach5Lines()
         {
-            return JsonFileServices.ReadJsonEachLine();
+            return JsonFileServices.ReadJsonEach5Lines();
+        }
+
+        [HttpGet("readjsoneach10line")]
+        public string GetJsonEach10Lines()
+        {
+            return JsonFileServices.ReadJsonEach10Lines();
         }
 
 
