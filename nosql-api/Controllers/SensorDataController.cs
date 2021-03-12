@@ -38,9 +38,10 @@ namespace nosql_api.Controllers
             return JsonFileServices.WriteJsonFile(dataQuantity);
         }
         [HttpGet("readjsoneachline/{step}")]
-        public string GetJsonEach5Lines(int step)
+        public string GetJsonEachLines(int step)
         {
-            return JsonFileServices.ReadJsonEachLines(step);
+            //return JsonFileServices.ReadJsonEachLines(step);
+            return JsonFileServices.ReadJsonEachLines2(step);
         }
 
         [HttpGet("downloadjson")]

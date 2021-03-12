@@ -77,5 +77,29 @@ namespace nosql_api.Services
                 }
             }return sb.ToString(); 
         }
+
+        public static string ReadJsonEachLines2(int step)
+        {
+            StringBuilder sb = new StringBuilder();
+            string path = Directory.GetCurrentDirectory();
+            string lokalPath = @$"{path}\Data\json-86400.json";
+            string rpiPath = @$"{path}/Data/json-86400.json";
+            using (FileStream fs = File.OpenRead(lokalPath))
+            using (BufferedStream bs = new BufferedStream(fs))
+            using (StreamReader r = new StreamReader(bs))
+            {
+                int i = 0;
+                while (i < 86400)
+                {
+                    if (i % step == 0)
+                    {
+                        sb.Append(r.ReadLine() + Environment.NewLine);
+                    }
+                    else { r.ReadLine(); }
+                    i++;
+                }
+            }
+            return sb.ToString();
+        }
     }
 }
