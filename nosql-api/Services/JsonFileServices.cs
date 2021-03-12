@@ -63,7 +63,7 @@ namespace nosql_api.Services
             string lokalPath = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-86400.json";
             string path = Directory.GetCurrentDirectory();
             string rpiPath = @$"{path}/Data/json-86400.json";
-            using (StreamReader r = new StreamReader(lokalPath))
+            using (StreamReader r = new StreamReader(rpiPath))
             {
                 int i= 0;
                 while (i<86400)
@@ -84,7 +84,7 @@ namespace nosql_api.Services
             string lokalPath = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-86400.json";
             string path = Directory.GetCurrentDirectory();
             string rpiPath = @$"{path}/Data/json-86400.json";
-            using (StreamReader r = new StreamReader(lokalPath))
+            using (StreamReader r = new StreamReader(rpiPath))
             {
 
                 int i = 0;
