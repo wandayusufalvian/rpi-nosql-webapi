@@ -73,13 +73,13 @@ namespace nosql_api.Controllers
             return RavenServices.WriteDocs();
         }
 
-        [HttpGet("ravendb1")] // untuk ravendb timeseries
+        [HttpGet("ravendb1")] // for ravendb timeseries
         public IEnumerable<SensorData> GetRaven()
         {
             return RavenServices.RetrieveAllDocs();
         }
 
-        [HttpGet("ravendb2")] // untuk ravendb tsdb2
+        [HttpGet("ravendb2")] // for ravendb tsdb2
         public IEnumerable<SensorData2> GetRaven2()
         {
 

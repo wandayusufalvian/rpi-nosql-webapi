@@ -9,7 +9,7 @@ namespace nosql_api.Services
 {
     public class DocumentStoreHolderRaven2
     {
-        //session untuk database tsdb2 
+        //session for database tsdb2 
         private static readonly Lazy<IDocumentStore> LazyStore =
         new Lazy<IDocumentStore>(() =>
         {

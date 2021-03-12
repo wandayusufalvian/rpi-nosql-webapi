@@ -42,9 +42,6 @@ namespace nosql_api.Services
         {
             using (IDocumentSession session = DocumentStoreHolderRaven.Store.OpenSession())
             {
-                /* To get data sensor: 
-                 * returned list (l) => l.sensorData (list object) => use index to get the value(e.g. : l.sensorData[0])
-                 */
                 return session
                         .Query<SensorData>()
                         .Take(8640)
@@ -57,15 +54,11 @@ namespace nosql_api.Services
         {
             using (IDocumentSession session = DocumentStoreHolderRaven2.Store.OpenSession())
             {
-                /* To get data sensor: 
-                 * returned list (l) => l.sensorData (list object) => use index to get the value(e.g. : l.sensorData[0])
-                 */
                 return  session
                         .Query<SensorData2>()
                         .Take(8640)
                         .Select(x => x)
                         .ToList();
-
             }
         }
 

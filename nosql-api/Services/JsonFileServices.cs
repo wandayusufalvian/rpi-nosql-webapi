@@ -84,7 +84,7 @@ namespace nosql_api.Services
             string path = Directory.GetCurrentDirectory();
             string lokalPath = @$"{path}\Data\json-86400.json";
             string rpiPath = @$"{path}/Data/json-86400.json";
-            using (FileStream fs = File.OpenRead(lokalPath))
+            using (FileStream fs = File.OpenRead(rpiPath))
             using (BufferedStream bs = new BufferedStream(fs))
             using (StreamReader r = new StreamReader(bs))
             {
