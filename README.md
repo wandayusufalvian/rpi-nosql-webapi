@@ -1,2 +1,3 @@
 # rpi-nosql-webapi
-NoSQL database in raspberry pi -> expose using ASP.NET Web API  
+NoSQL database benchmark with server run on Raspberry Pi 3 
+Response time is calculated based on Web API response time using Postman
