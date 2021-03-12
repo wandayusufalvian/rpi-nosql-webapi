@@ -13,7 +13,7 @@ namespace nosql_api.Services
 {
     public class JsonFileServices
     {
-        public static IEnumerable<SensorData> GetDatasJson()
+        public static IEnumerable<SensorData> GetJson1()
         {
             string dataLokal = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\ini-86400.json";
             string dataRpi = @"Z:\ts-api\Data\ini-86400.json";
@@ -25,7 +25,7 @@ namespace nosql_api.Services
             } 
         }
 
-        public static string GetJsonString()
+        public static string GetJson2()
         {
             using (StreamReader r = new StreamReader(@"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\ini-86400.json"))
             {
@@ -57,18 +57,18 @@ namespace nosql_api.Services
             return "success write data";
         }
 
-        public static string ReadJsonEach5Lines()
+        public static string ReadJsonEachLines(int step)
         {
             StringBuilder sb = new StringBuilder();
-            string lokalPath = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-86400.json";
             string path = Directory.GetCurrentDirectory();
+            string lokalPath = @$"{path}\Data\json-86400.json";
             string rpiPath = @$"{path}/Data/json-86400.json";
             using (StreamReader r = new StreamReader(rpiPath))
             {
                 int i= 0;
                 while (i<86400)
                 {
-                    if (i % 5 == 0)
+                    if (i % step == 0)
                     {
                         sb.Append(r.ReadLine()+Environment.NewLine);
                     }
@@ -76,29 +76,6 @@ namespace nosql_api.Services
                     i++;
                 }
             }return sb.ToString(); 
-        }
-
-        public static string ReadJsonEach10Lines()
-        {
-            StringBuilder sb = new StringBuilder();
-            string lokalPath = @"C:\Users\DELL\yusuf-frmltrx\rpi-nosql-webapi\nosql-api\Data\json-86400.json";
-            string path = Directory.GetCurrentDirectory();
-            string rpiPath = @$"{path}/Data/json-86400.json";
-            using (StreamReader r = new StreamReader(rpiPath))
-            {
-
-                int i = 0;
-                while (i < 86400)
-                {
-                    if (i % 10 == 0)
-                    {
-                        sb.Append(r.ReadLine() + Environment.NewLine);
-                    }
-                    else { r.ReadLine(); }
-                    i++;
-                }
-            }
-            return sb.ToString();
         }
     }
 }

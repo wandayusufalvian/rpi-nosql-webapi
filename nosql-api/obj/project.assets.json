@@ -4865,32 +4865,36 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Newtonsoft.Json >= 12.0.3",
       "RavenDB.Client >= 5.1.5"
     ]
   },
   "packageFolders": {
-    "/home/pi/.nuget/packages/": {}
+    "C:\\Users\\DELL\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/pi/rpi-nosql-webapi/nosql-api/nosql-api.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\nosql-api.csproj",
       "projectName": "nosql-api",
-      "projectPath": "/home/pi/rpi-nosql-webapi/nosql-api/nosql-api.csproj",
-      "packagesPath": "/home/pi/.nuget/packages/",
-      "outputPath": "/home/pi/rpi-nosql-webapi/nosql-api/obj/",
+      "projectPath": "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\nosql-api.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DELL\\yusuf-frmltrx\\rpi-nosql-webapi\\nosql-api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/pi/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -4902,7 +4906,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.3, )"
+          },
           "RavenDB.Client": {
             "target": "Package",
             "version": "[5.1.5, )"
@@ -4926,7 +4935,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/pi/dotnet-arm32/sdk/3.1.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

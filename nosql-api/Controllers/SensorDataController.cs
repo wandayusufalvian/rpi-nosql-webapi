@@ -37,18 +37,11 @@ namespace nosql_api.Controllers
             int dataQuantity = 86400;
             return JsonFileServices.WriteJsonFile(dataQuantity);
         }
-        [HttpGet("readjsoneach5line")]
-        public string GetJsonEach5Lines()
+        [HttpGet("readjsoneachline/{step}")]
+        public string GetJsonEach5Lines(int step)
         {
-            return JsonFileServices.ReadJsonEach5Lines();
+            return JsonFileServices.ReadJsonEachLines(step);
         }
-
-        [HttpGet("readjsoneach10line")]
-        public string GetJsonEach10Lines()
-        {
-            return JsonFileServices.ReadJsonEach10Lines();
-        }
-
 
         [HttpGet("downloadjson")]
         public IActionResult DownloadJson()
@@ -61,16 +54,16 @@ namespace nosql_api.Controllers
             return File(content, contentType, fileName);
         }
 
-        [HttpGet("rawjson")]
+        [HttpGet("jsonstring")]
         public string GetRawJson()
         {
-            return JsonFileServices.GetJsonString();
+            return JsonFileServices.GetJson2();
         }
 
-        [HttpGet("json")]
+        [HttpGet("jsonobject")]
         public IEnumerable<SensorData> Getjson()
         {
-            return JsonFileServices.GetDatasJson();
+            return JsonFileServices.GetJson1();
         }
 
         [HttpGet("writedocsraven")]
